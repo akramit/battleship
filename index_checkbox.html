@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drona and Eklavya</title>
+  <script async src="./index.js"></script>
+</head>
+<body>
+  <h1>Hello there!</h1>
+  <p>Click the button to see a message.</p>
+  <button onclick="displayMessage()">Show Message</button>
+
+  <script>
+    setTimeout(wakeUpUser,5000);
+    function wakeUpUser(){
+      alert("Are you going to stare at this boring page forever?");
+    }
+  </script>
+
+  <h2>Checkbox Generator</h2>
+  <form id="checkboxForm">
+    <label for="numberOfCheckboxes">Enter the number of checkboxes:</label>
+    <input type="number" id="numberOfCheckboxes" name="numberOfCheckboxes" min="1">
+    <input type="submit" value="Generate Options">
+  </form>
+  <div id="checkboxContainer"></div>
+  <script>
+    document.getElementById('checkboxForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const numberOfCheckboxes = parseInt(document.getElementById('numberOfCheckboxes').value);
+
+      let checkboxesHTML = '';
+      for (let i = 1; i <= numberOfCheckboxes; i++) {
+        checkboxesHTML += `<input type="checkbox" id="checkbox${i}" name="checkbox${i}">
+                           <label for="checkbox${i}">Checkbox ${i}</label><br>`;
+      }
+
+      document.getElementById('checkboxContainer').innerHTML = checkboxesHTML;
+    });
+  </script>
+
+  <button onclick="displayCheckboxResult()"> Click to know Output</button>
+
+</body>
+</html>
+
