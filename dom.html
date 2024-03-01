@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Planets</title>
+<style>
+    .redtext { color: red; } 
+</style>
+<script>
+    function init(){
+        var planet = document.getElementById("greenplanet");
+        planet.innerHTML = "Got Hit. Uh Oh !!";
+        planet.setAttribute("class","redtext"); 
+    }
+
+    window.onload= init;
+</script>
+</head>
+<body>
+    <h1>Green Planet</h1>
+    <p id="greenplanet">
+        All Is Well !!
+    <span>
+Special showing tonight at <em>midnight</em>! 
+</span>
+    </p>
+    <h1>Blue Planet</h1>
+    <p id="blueplanet">
+        Nothing to report.
+    </p>
+    <h1>Red Planet</h1>
+    <p id="redplanet">
+        All System A-OK.
+    </p>
+
+</body>
+</html>
