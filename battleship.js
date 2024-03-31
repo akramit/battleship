@@ -94,7 +94,18 @@ function parseGuess(guess) {
 
 function init() {
   var fireButton = document.getElementById("fireButton");
+  var guessInput = document.getElementById("guessInput");
+  
+  // Clicking FireButton triggers the execution
   fireButton.onclick = handleFireButton;
+
+  // Hitting enter on input field triggers the execution
+  guessInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleFireButton();
+    }
+  });
 }
 function handleFireButton() {
   var guessInput = document.getElementById("guessInput");
